@@ -27,10 +27,6 @@ mkdir -p 'lists'
 
 mapfile -t EXCLUDELIST < "$EXCLUDESFILE" 
 
-#read -r -a EXCLUDELIST <<< sed -e "/^\s*#/d;/^[[:space:]]*$/d" "$EXCLUDESFILE"
-#echo "${EXCLUDELIST[*]}"
-#exit
-
 for i in "${HOSTSLISTS[@]}" 
 do 
 	FILENAME=$(echo "$i" | awk -F/ '{print $3}') #extract domain name to name file
