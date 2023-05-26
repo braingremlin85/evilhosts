@@ -11,6 +11,7 @@ HOSTSLISTS=(
 	"http://someonewhocares.org/hosts/hosts"
 	#"http://www.malwaredomainlist.com/hostslist/hosts.txt" blank list atm
 	"https://urlhaus.abuse.ch/downloads/hostfile/"
+	"https://isc.sans.edu/diaryimages/zipdomains.txt" # .zip malicious TLD's
 ) 
 
 # CONFIG END
