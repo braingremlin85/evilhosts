@@ -1,17 +1,22 @@
 #!/bin/bash
 # EVILHOSTS
 # Generate a hosts file from internet lists of malicious url
+#
+# 	Cronjobs for DD-WRT hosts list import
+# 	======================================
+#	0 4 * * 0 wget http://apollo.local/hosts.txt -O /tmp/hosts.add/customhosts
+#	10 4 * * 0 service dnsmasq restart
 
 # CONFIG START
-WORKING_DIR="/volume4/homes/zeus/script/evilhosts/"
+WORKING_DIR="/volume4/media/script/evilhosts/"
 EXPORTFILE="/volume1/web/hosts.txt"
 EXCLUDESFILE="exclude.list"
 
 HOSTSLISTS=( 
 	"http://someonewhocares.org/hosts/hosts"
+	#"http://www.malwaredomainlist.com/hostslist/hosts.txt" blank list atm
 	"https://urlhaus.abuse.ch/downloads/hostfile/"
 	"https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/native.winoffice.txt"
-	#"https://isc.sans.edu/diaryimages/zipdomains.txt" # .zip malicious TLD's
 ) 
 
 # CONFIG END
@@ -33,7 +38,7 @@ do
 	FILENAME=$(echo "$i" | awk -F/ '{print $3}') #extract domain name to name file
 
 	printf "Downloading $FILENAME...\n"
-	wget $i -O "lists/"$FILENAME -q
+	#wget $i -O "lists/"$FILENAME -q
 	
 	if [ $? -eq 0 ]; then
 		printf "$FILENAME downloaded successfully\n"
