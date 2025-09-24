@@ -3,7 +3,7 @@
 # Generate a hosts file from internet lists of malicious url
 
 # CONFIG START
-WORKING_DIR="/volume4/homes/zeus/script/evilhosts/"
+WORKING_DIR="/volume4/homes/zeus/git/evilhosts/"
 EXPORTFILE="/volume1/web/hosts.txt"
 EXCLUDESFILE="exclude.list"
 
