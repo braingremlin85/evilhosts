@@ -7,10 +7,14 @@ WORKING_DIR="/volume4/homes/zeus/git/evilhosts/"
 EXPORTFILE="/volume1/web/hosts.txt"
 EXCLUDESFILE="exclude.list"
 
+# https://github.com/hagezi/dns-blocklists?tab=readme-ov-file#overview
+
 HOSTSLISTS=( 
 	"http://someonewhocares.org/hosts/hosts"
 	"https://urlhaus.abuse.ch/downloads/hostfile/"
 	"https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/native.winoffice.txt"
+	"https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/hosts/native.samsung.txt"
+	
 	#"https://isc.sans.edu/diaryimages/zipdomains.txt" # .zip malicious TLD's
 ) 
 
